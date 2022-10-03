@@ -3,9 +3,7 @@
 properties([disableConcurrentBuilds()])
 
 pipeline {
-    agent {
-        label 'main'
-        }
+    agent any
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
@@ -21,9 +19,10 @@ pipeline {
                 sh 'uptime'
             }
         }
-    stage("Second step") {
+        stage("Second step") {
             steps {
                 sh 'ifconfig'
-
+            }
+        }    
     }
 }
