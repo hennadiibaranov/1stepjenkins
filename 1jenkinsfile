@@ -19,7 +19,7 @@ pipeline {
                 sh 'uptime'
             }
         }
-        stage("Second step") {
+        stage("Third step") {
             steps {
                 sh 'ifconfig'
             }
